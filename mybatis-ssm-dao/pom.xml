@@ -5,20 +5,33 @@
         <groupId>com.demo</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>mybatis-ssm-dao</artifactId>
     <packaging>war</packaging>
     <name>mybatis-ssm-dao Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
+
     <build>
         <finalName>mybatis-ssm-dao</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>7.1.6.v20100715</version>
+                    <configuration>
+                        <scanIntervalSeconds>10</scanIntervalSeconds>
+                        <webAppConfig>
+                            <contextPath>/mybatis</contextPath>
+                        </webAppConfig>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
